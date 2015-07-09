@@ -14,10 +14,23 @@
     <url>http://site.trajano.net/wagon-git</url>
     <scm>
         <connection>scm:git:https://github.com/trajano/${project.artifactId}</connection>
-        <developerConnection>scm:git:ssh://git@github.com/trajano/${project.artifactId}.git</developerConnection>
+        <developerConnection>scm:git:ssh://git@github.com/mykelalvis/${project.artifactId}.git</developerConnection>
         <tag>wagon-git-2.0.1</tag>
     </scm>
     <distributionManagement>
+ 		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>central</id>
+			<name>Proxy Releases</name>
+			<url>${proxy.url.base}/external-local</url>
+			<layout>default</layout>
+		</repository>
+		<snapshotRepository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>snapshots</id>
+			<name>Proxy Snapshots</name>
+			<url>${proxy.url.base}/external-local</url>
+		</snapshotRepository>
         <site>
             <id>gh-pages</id>
             <name>Trajano GitHub Pages</name>
@@ -25,6 +38,7 @@
         </site>
     </distributionManagement>
     <properties>
+		<proxy.url.base>http://ihealthtechnologies.artifactoryonline.com/ihealthtechnologies</proxy.url.base>
         <jdk.version>1.6</jdk.version>
         <surefire.version>2.18.1</surefire.version>
     </properties>
